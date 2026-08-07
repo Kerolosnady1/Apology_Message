@@ -104,6 +104,10 @@ document.getElementById('envelope').addEventListener('click', function() {
     letter.classList.remove('hidden');
     setTimeout(() => letter.classList.add('visible'), 10);
     
+    // Show music player
+    const musicPlayer = document.getElementById('music-player');
+    musicPlayer.classList.remove('hidden');
+    
     // Play audio
     console.log("Attempting to play audio. Player:", player);
     if (player && typeof player.playVideo === 'function') {
