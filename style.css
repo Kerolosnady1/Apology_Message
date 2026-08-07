@@ -18,6 +18,15 @@ body {
     background-color: #1a0005;
     z-index: 100;
     transition: opacity 1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#preloader svg {
+    display: block;
+    width: 600px;
+    height: 552px;
 }
 
 /* Background canvas for floating hearts */
@@ -43,6 +52,7 @@ svg {
     position: absolute;
     display: none;
 }
+
 
 @keyframes float {
     0% { transform: translateY(0px); }
@@ -106,6 +116,7 @@ svg {
     border-radius: 10px;
     text-align: center;
 }
+
 
 .heart {
     background-color: #ff0000; /* Red */
@@ -193,3 +204,15 @@ svg {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
 }
+
+/* Responsive Scaling */
+@media (max-width: 450px) {
+    #app {
+        transform: scale(0.8);
+    }
+    #preloader svg {
+        transform: scale(0.6);
+    }
+}
+
+
