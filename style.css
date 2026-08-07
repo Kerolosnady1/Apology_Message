@@ -208,11 +208,13 @@ svg {
 /* Responsive Scaling */
 @media (max-width: 450px) {
     #app {
-        transform: scale(0.8);
+        width: 80%;
     }
     #preloader svg {
-        transform: scale(0.6);
+        width: 80%;
+        height: auto;
     }
 }
+
 
 

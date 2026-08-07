@@ -78,6 +78,13 @@ window.addEventListener('load', () => {
 
 /* YOUTUBE PLAYER */
 let player;
+
+// Load the IFrame Player API code asynchronously
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
 window.onYouTubeIframeAPIReady = function() {
     console.log("YouTube API Ready");
     player = new YT.Player('youtube-player', {
