@@ -44,7 +44,7 @@ bgRenderer.setSize(window.innerWidth, window.innerHeight);
 
 const bgHearts = [];
 function createBgHeart() {
-    const geometry = new THREE.SphereGeometry(10, 32, 32); // Simplified for performance
+    const geometry = new THREE.SphereGeometry(10, 32, 32); 
     const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
     const heart = new THREE.Mesh(geometry, material);
     heart.position.set((Math.random() - 0.5) * 2000, (Math.random() - 0.5) * 2000, -1000);
@@ -76,12 +76,33 @@ window.addEventListener('load', () => {
     }, 4000);
 });
 
+/* YOUTUBE PLAYER */
+let player;
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('youtube-player', {
+        height: '1',
+        width: '1',
+        videoId: 'z6p2MrlDWig',
+        playerVars: {
+            'playsinline': 1,
+            'autoplay': 0, // Wait for user interaction
+            'loop': 1,
+            'playlist': 'z6p2MrlDWig'
+        }
+    });
+}
+
 /* ENVELOPE INTERACTION */
 document.getElementById('envelope').addEventListener('click', function() {
     this.style.display = 'none';
     const letter = document.getElementById('letter');
     letter.classList.remove('hidden');
     setTimeout(() => letter.classList.add('visible'), 10);
+    
+    // Play audio
+    if (player && typeof player.playVideo === 'function') {
+        player.playVideo();
+    }
 });
 
 /* EVENTS */
