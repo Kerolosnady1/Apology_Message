@@ -140,19 +140,20 @@ svg {
 
 /* Music Player Widget */
 .music-player {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    margin-top: 20px;
     background: rgba(255, 255, 255, 0.9);
     padding: 10px 20px;
     border-radius: 50px;
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     z-index: 20;
-    transition: opacity 0.5s;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .player-btn {
