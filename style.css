@@ -156,6 +156,10 @@ svg {
     margin-right: auto;
 }
 
+.music-player.hidden {
+    display: none;
+}
+
 .player-btn {
     background: #ff0000;
     color: white;
