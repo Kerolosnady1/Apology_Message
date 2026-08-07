@@ -78,16 +78,21 @@ window.addEventListener('load', () => {
 
 /* YOUTUBE PLAYER */
 let player;
-function onYouTubeIframeAPIReady() {
+window.onYouTubeIframeAPIReady = function() {
+    console.log("YouTube API Ready");
     player = new YT.Player('youtube-player', {
         height: '1',
         width: '1',
         videoId: 'z6p2MrlDWig',
         playerVars: {
             'playsinline': 1,
-            'autoplay': 0, // Wait for user interaction
+            'autoplay': 0,
             'loop': 1,
             'playlist': 'z6p2MrlDWig'
+        },
+        events: {
+            'onReady': () => console.log("Player Ready"),
+            'onError': (e) => console.error("Player Error", e)
         }
     });
 }
@@ -100,6 +105,7 @@ document.getElementById('envelope').addEventListener('click', function() {
     setTimeout(() => letter.classList.add('visible'), 10);
     
     // Play audio
+    console.log("Attempting to play audio. Player:", player);
     if (player && typeof player.playVideo === 'function') {
         player.playVideo();
     }
