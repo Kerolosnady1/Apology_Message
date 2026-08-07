@@ -111,6 +111,19 @@ document.getElementById('envelope').addEventListener('click', function() {
     }
 });
 
+/* AUDIO CONTROLS */
+document.getElementById('play-btn').addEventListener('click', function() {
+    if (player && typeof player.playVideo === 'function') {
+        player.playVideo();
+    }
+});
+
+document.getElementById('pause-btn').addEventListener('click', function() {
+    if (player && typeof player.pauseVideo === 'function') {
+        player.pauseVideo();
+    }
+});
+
 /* EVENTS */
 function onWindowResize() {
   camera.aspect = window.innerWidth / window.innerHeight;

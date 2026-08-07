@@ -138,6 +138,30 @@ svg {
     top: 0;
 }
 
+/* Audio Controls Styling */
+.audio-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.control-btn {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Georgia', serif;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.control-btn:hover {
+    background-color: #cc0000;
+}
+
 .hidden {
     display: none;
 }
